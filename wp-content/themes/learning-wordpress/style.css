@@ -1,0 +1,167 @@
+/*
+Theme Name : Learning Wordpress
+Author : Nathan Lee
+Version : 1.0
+
+*/
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    color : #333;
+}
+
+a:link, a:visited {
+    color : black;
+}
+
+p {
+    line-height: 1.65em;
+}
+
+div.container {
+    max-width: 920px;
+    margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.site-header {
+    border-bottom: 2px solid #999;
+}
+
+.site-footer {
+    margin-top: 30px;
+    border-top: 2px solid #999;
+}
+
+.post {
+    border-bottom: 2px dotted #999;
+}
+.post:last-of-type {
+    border: none;
+}
+
+/* navigation menu */
+#menu-primary {
+    display: flex;
+    margin: 0;
+}
+#menu-primary>li {
+    list-style: none;
+    padding : 10px 18px;
+    border: 2px solid #999;
+    margin-right: 5px;
+}
+#menu-primary>li>a {
+    text-decoration: none;
+}
+#menu-primary>li:hover {
+    background-color: #ececec;
+}
+#menu-primary>li.current-menu-item, #menu-primary>li.current-menu-item  {
+    
+    background-color: orange;
+}
+/*footer menu */
+#menu-footer {
+    display: flex;
+    margin :0
+}
+#menu-footer>li {
+    list-style: none;
+    margin-right: 10px;
+    padding-right: 10px;
+    border-right: 2px dotted #006ec3;
+}
+#menu-footer>li>a {
+    text-decoration: none;
+    color : #006ec3
+}
+/* layout for page porfolio with column */
+div.column-title {
+    width: 30%;
+    float: left;
+}
+div.column-content {
+    width: 70%;
+    float: right;
+}
+
+/* Clearfix */
+.clearfix:before, .clearfix:after {
+    content : "";
+    display : table;
+}
+.clearfix:after {
+    clear:both;
+}
+
+/* info box style */
+.info-box {
+    width: 30%;
+    float: right;
+    margin:  0 0 30px 30px;
+    padding : 20px;
+    background-color: #EEE;
+}
+
+.info-box h4 {
+    margin-bottom: 6px;
+}
+
+.info-box p {
+    font-size: 85%;
+}
+
+/* SubPage and parent */
+ul.min-menu {
+    display: flex;
+    margin-top: -17px;
+}
+ul.min-menu>li:last-child {
+    list-style: none;
+    padding-left : 20px;
+    padding-right : 20px;
+    border-right: 2px solid #999;
+}
+
+ul.min-menu>li:first-child {
+    list-style: none;
+    padding-left: 60px;
+    padding-right: 20px;
+    border-right: 2px solid #999;
+}
+ul.min-menu>li>a {
+    text-decoration: none;
+}
+
+
+.parent-link>a {
+    list-style: none;
+    text-decoration: none;
+    padding-right: 20px;
+    border-right: 2px solid #999;
+}
+
+/* img {
+    width: 100%;
+    height: auto;
+} */
+.content {
+    display: flex;
+}
+.content>p {
+    margin-left: 20px;
+    margin-top: -5px;
+}
+
+/** search section */
+.hd-search {
+    float: right;
+}
+
+input[type = "submit"]{
+    background-color: #006ec3;
+    color : white;
+}
