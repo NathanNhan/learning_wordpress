@@ -101,6 +101,7 @@ function set_html_content_type () {
 
 
 function ideapro_form_capture () {
+    global $wpdb;
     if(array_key_exists('ideapro_submit_form',$_POST)){
         $to = "trongnhan8150@gmail.com";
         $subject = "Idea Pro Example site form Submission";
@@ -115,6 +116,22 @@ function ideapro_form_capture () {
     }
 
 }
-add_action('wp_head','ideapro_form_capture')
+add_action('wp_head','ideapro_form_capture');
+
+// Array of arguments for inserting a new comment. 
+// $commentdata = array( 
+//     'comment_approved' => 1, 
+//     'comment_author_IP' => $_SERVER['REMOTE_ADDR'], 
+//     'comment_content' => $body, 
+//     'comment_date' => current_time('mysql'), 
+//     'comment_post_ID' => $post->ID, 
+// ); 
+  
+// NOTICE! Understand what this does before running. 
+// $result = wp_insert_comment($commentdata); 
+
+//Add data into database
+global $wpdb;
+$insertData = $wpdb->get_results(" INSERT INTO ".$wpdb->prefix."form_submissions (data) VALUES ('".$body."')" );
 
 ?>
