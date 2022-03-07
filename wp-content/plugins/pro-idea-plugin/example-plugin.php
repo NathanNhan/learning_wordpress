@@ -101,37 +101,41 @@ function set_html_content_type () {
 
 
 function ideapro_form_capture () {
-    global $wpdb;
+    global $wpdb, $post;
     if(array_key_exists('ideapro_submit_form',$_POST)){
         $to = "trongnhan8150@gmail.com";
         $subject = "Idea Pro Example site form Submission";
         $body = '';
-        $body .= 'Name: '.$_POST['full_name']. '</br>';
-        $body .= 'Email'. $_POST['email_address'] . '</br>';
-        $body .= 'Phone:' . $_POST['phone_number'] . '</br>';
+        $body .= 'Name: '.$_POST['full_name']. '<br/>';
+        $body .= 'Email'. $_POST['email_address'] . '<br/>';
+        $body .= 'Phone:' . $_POST['phone_number'] . '<br/>';
         $body .= 'Comments:' . $_POST['comments'] . '<br/>';
         add_filter('wp_mail_content_type','set_html_content_type' );
         wp_mail($to, $subject, $body);
         remove_filter('wp_mail_content_type','set_html_content_type');
     }
+    //Add data into database
+
+    $insertData = $wpdb->get_results(" INSERT INTO wp_form_submissions (data) VALUES ('" . $body . "')");
+
+    //Array of arguments for inserting a new comment. 
+    // $commentdata = array( 
+    //     'comment_approved' => 1, 
+    //     'comment_author_IP' => $_SERVER['REMOTE_ADDR'], 
+    //     'comment_content' => $body, 
+    //     'comment_date' => current_time('mysql'), 
+    //     'comment_post_ID' => $post->ID, 
+    // ); 
+      
+    //NOTICE! Understand what this does before running. 
+    // $result = wp_insert_comment($commentdata); 
 
 }
 add_action('wp_head','ideapro_form_capture');
 
-// Array of arguments for inserting a new comment. 
-// $commentdata = array( 
-//     'comment_approved' => 1, 
-//     'comment_author_IP' => $_SERVER['REMOTE_ADDR'], 
-//     'comment_content' => $body, 
-//     'comment_date' => current_time('mysql'), 
-//     'comment_post_ID' => $post->ID, 
-// ); 
-  
-// NOTICE! Understand what this does before running. 
-// $result = wp_insert_comment($commentdata); 
 
-//Add data into database
-global $wpdb;
-$insertData = $wpdb->get_results(" INSERT INTO ".$wpdb->prefix."form_submissions (data) VALUES ('".$body."')" );
+
+
+
 
 ?>

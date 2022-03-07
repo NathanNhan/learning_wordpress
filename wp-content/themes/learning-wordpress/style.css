@@ -165,3 +165,67 @@ input[type = "submit"]{
     background-color: #006ec3;
     color : white;
 }
+
+/* article post format aside */
+article.post-aside {
+    font-size: 125%;
+    background-color: #fff5cb;
+    padding: 20px;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, .1);
+    border-radius: 5px;
+}
+
+.aside-article {
+    font-size: small;
+    color:#999;
+    margin: 0;
+    padding: 0;
+}
+/* post link */
+.post-link {
+    background-color: #E0EBFF;
+    padding: 20px;
+}
+.post-link>a {
+    color : #006ec3;
+}
+
+/* post gallery */
+.post-gallery {
+    background-color: black;
+    padding: 20px;
+}
+.post-gallery img {
+    border: none!important;
+}
+.title-gallery {
+    text-align: center;
+    color: white;
+}
+
+/* column layout */
+.main-column {
+    width: 66%;
+    float: left;
+}
+.secondary-column {
+    width: 30%;
+    float:right;
+}
+
+/*widgets footer */
+
+.footer-widgets {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+/* Post column */
+.one-half {
+    width: 45%;
+    float: left;
+    margin-right: 10%;
+}
+.last {
+    margin-right: 0;
+}
